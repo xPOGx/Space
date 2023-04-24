@@ -4,6 +4,7 @@ public class Bomb extends BaseObject {
         super(x, y, 1);
     }
 
+    @Override
     public void move() {
         setY(getY() + 1);
     }
