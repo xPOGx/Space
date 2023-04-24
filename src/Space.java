@@ -1,14 +1,13 @@
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Space {
-    private int width;
-    private int height;
+    private final int width;
+    private final int height;
     private SpaceShip ship;
-    private List<Ufo> ufos = new ArrayList<>();
-    private List<Rocket> rockets = new ArrayList<>();
-    private List<Bomb> bombs = new ArrayList<>();
+    private final List<Ufo> ufos = new ArrayList<>();
+    private final List<Rocket> rockets = new ArrayList<>();
+    private final List<Bomb> bombs = new ArrayList<>();
     public static Space game;
     private boolean isGameOver;
 
@@ -66,13 +65,6 @@ public class Space {
 
         for (BaseObject object : getAllItems()) {
             object.draw(canvas);
-        }
-    }
-
-    public void sleep(int ms) {
-        try {
-            Thread.sleep(ms);
-        } catch (InterruptedException ignored) {
         }
     }
 
@@ -157,16 +149,8 @@ public class Space {
         return height;
     }
 
-    public SpaceShip getShip() {
-        return ship;
-    }
-
     public void setShip(SpaceShip ship) {
         this.ship = ship;
-    }
-
-    public List<Ufo> getUfos() {
-        return ufos;
     }
 
     public List<Rocket> getRockets() {

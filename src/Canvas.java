@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class Canvas {
     private final int width;
     private final int height;
@@ -43,17 +41,5 @@ public class Canvas {
             System.out.println();
         }
         System.out.println("\n");
-    }
-
-    public int getWidth() {
-        return width;
-    }
-
-    public int getHeight() {
-        return height;
-    }
-
-    public char[][] getMatrix() {
-        return matrix;
     }
 }

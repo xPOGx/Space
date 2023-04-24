@@ -6,8 +6,6 @@ public class Ufo extends BaseObject {
             {1, 0, 0, 0, 1},
             {0, 0, 0, 0, 0},
     };
-    private double dx;
-    private double dy;
 
     public Ufo(double x, double y) {
         super(x, y, 3);
@@ -20,10 +18,8 @@ public class Ufo extends BaseObject {
 
     @Override
     public void move() {
-        dx = Math.random() * 2 - 1;
-        dy = Math.random() * 2 - 1;
-        x += dx;
-        y += dy;
+        x += Math.random() * 2 - 1;
+        y += Math.random() * 2 - 1;
         checkBorders(radius, Space.game.getWidth() - radius + 1, radius, (double) Space.game.getHeight()/2 - 1);
 
         if ((int) (Math.random() * 10) == 0) {
