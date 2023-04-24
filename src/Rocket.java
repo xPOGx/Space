@@ -6,10 +6,11 @@ public class Rocket extends BaseObject {
 
     @Override
     public void move() {
-        setY(getY() - 1);
+        y--;
     }
 
+    @Override
     public void draw(Canvas canvas) {
-        canvas.setPoint(getX(), getY(), 'R');
+        canvas.setPoint(x, y, 'R');
     }
 }

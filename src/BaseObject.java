@@ -1,7 +1,7 @@
 public abstract class BaseObject {
-    private double x;
-    private double y;
-    private double radius;
+    protected double x;
+    protected double y;
+    protected double radius;
     private boolean isAlive;
 
     public BaseObject(double x, double y, double radius) {
@@ -13,19 +13,26 @@ public abstract class BaseObject {
 
     public void move() {}
 
-    public void draw() {}
+    public void draw(Canvas canvas) {}
+
+    public void checkBorders(double minX, double maxX, double minY, double maxY) {
+        if (x < minX) x = minX;
+        if (x > maxX) x = maxX;
+        if (y < minY) y = minY;
+        if (y > maxY) y = maxY;
+    }
 
     public void die() {
         isAlive = false;
     }
 
     public boolean isIntersect(BaseObject o) {
-        double a = Math.pow(this.x - o.getX(), 2);
-        double b = Math.pow(this.y - o.getY(), 2);
+        double a = Math.pow(x - o.x, 2);
+        double b = Math.pow(y - o.y, 2);
         double result = Math.sqrt(a + b);
-        double max = Math.max(radius, o.getRadius());
+        double max = Math.max(radius, o.radius);
 
-        return result < max;
+        return result <= max;
     }
 
     public double getX() {

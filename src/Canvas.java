@@ -8,7 +8,7 @@ public class Canvas {
     public Canvas(int width, int height) {
         this.width = width;
         this.height = height;
-        matrix = new char[height][width];
+        matrix = new char[height + 2][width + 2];
     }
 
     public void setPoint(double x, double y, char c) {
@@ -31,13 +31,12 @@ public class Canvas {
     }
 
     public void clear() {
-        for (char[] chars : matrix) {
-            Arrays.fill(chars, ' ');
-        }
+        matrix = new char[height + 2][width + 2];
     }
 
     public void print() {
         for (char[] chars : matrix) {
+            System.out.print(" ");
             for (char aChar : chars) {
                 System.out.print(aChar + " ");
             }
