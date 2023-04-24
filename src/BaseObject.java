@@ -32,7 +32,7 @@ public abstract class BaseObject {
         double result = Math.sqrt(a + b);
         double max = Math.max(radius, o.radius);
 
-        return result <= max;
+        return result < max;
     }
 
     public double getX() {

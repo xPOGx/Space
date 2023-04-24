@@ -24,7 +24,7 @@ public class Ufo extends BaseObject {
         dy = Math.random() * 2 - 1;
         x += dx;
         y += dy;
-        checkBorders(radius, Space.game.getWidth() - radius + 1, radius - 1, (double) Space.game.getHeight()/2 - 1);
+        checkBorders(radius, Space.game.getWidth() - radius + 1, radius, (double) Space.game.getHeight()/2 - 1);
 
         if ((int) (Math.random() * 10) == 0) {
             fire();

@@ -1,8 +1,8 @@
 import java.util.Arrays;
 
 public class Canvas {
-    private int width;
-    private int height;
+    private final int width;
+    private final int height;
     private char[][] matrix;
 
     public Canvas(int width, int height) {
