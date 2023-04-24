@@ -1,14 +1,14 @@
 import java.util.Arrays;
 
 public class SpaceShip extends BaseObject {
-    private static int[][] matrix = {
+    private static final int[][] matrix = {
             {0, 0, 0, 0, 0},
             {0, 0, 1, 0, 0},
             {0, 0, 1, 0, 0},
             {1, 0, 1, 0, 1},
             {1, 1, 1, 1, 1},
     };
-    private double dx = 0;
+    private double dx;
 
     public SpaceShip(double x, double y) {
         super(x, y, 3);
@@ -32,10 +32,10 @@ public class SpaceShip extends BaseObject {
     }
 
     public void moveLeft() {
-        dx--;
+        dx = -1;
     }
 
     public void moveRight() {
-        dx++;
+        dx = 1;
     }
 }
