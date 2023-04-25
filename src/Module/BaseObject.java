@@ -1,6 +1,11 @@
 package Module;
 
+import Controller.Controller;
+import View.MainView;
+
 public abstract class BaseObject {
+    public static final Space game = Controller.getGame();
+    public static final int SIZE = 30;
     protected double x;
     protected double y;
     protected double radius;
@@ -38,7 +43,7 @@ public abstract class BaseObject {
     }
 
     public double getX() {
-        return x;
+        return x * 20;
     }
 
     public void setX(double x) {
@@ -46,7 +51,7 @@ public abstract class BaseObject {
     }
 
     public double getY() {
-        return y;
+        return y * 20;
     }
 
     public void setY(double y) {

@@ -10,41 +10,14 @@ public class Space {
     private final List<Ufo> ufos = new ArrayList<>();
     private final List<Rocket> rockets = new ArrayList<>();
     private final List<Bomb> bombs = new ArrayList<>();
-    public static Space game;
+    private final Canvas canvas;
     private boolean isGameOver;
 
     public Space(int width, int height) {
         this.width = width;
         this.height = height;
+        canvas = new Canvas(width, height);
         isGameOver = false;
-    }
-
-    public static void main(String[] args) {
-        game = new Space(30, 30);
-        game.setShip(new SpaceShip((double) game.width /2, game.getHeight() - 2));
-        game.run();
-    }
-
-    public void run() {
-        Canvas canvas = new Canvas(width, height);
-        createUfo();
-        ship.fire();
-        for (int i = 0; i < 100; i++) {
-            moveAllItems();
-            checkBombs();
-            checkRockets();
-            removeDead();
-            createUfo();
-
-            canvas.clear();
-            draw(canvas);
-            canvas.print();
-            if (isGameOver) {
-                System.out.println("GAME OVER");
-                break;
-            }
-        }
-
     }
 
     public void draw(Canvas canvas) {
@@ -161,5 +134,13 @@ public class Space {
 
     public List<Bomb> getBombs() {
         return bombs;
+    }
+
+    public List<Ufo> getUfos() {
+        return ufos;
+    }
+
+    public Canvas getCanvas() {
+        return canvas;
     }
 }

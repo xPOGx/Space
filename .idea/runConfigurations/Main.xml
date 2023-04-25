@@ -2,7 +2,7 @@
   <configuration default="false" name="Main" type="Application" factoryName="Application" nameIsGenerated="true">
     <option name="MAIN_CLASS_NAME" value="Main.Main" />
     <module name="Space" />
-    <option name="VM_PARAMETERS" value="--module-path &quot;C:\Users\POG2\Downloads\javafx-sdk-17.0.6\lib&quot; --add-modules javafx.controls" />
+    <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-17\lib&quot; --add-modules javafx.controls" />
     <extension name="coverage">
       <pattern>
         <option name="PATTERN" value="Main.*" />

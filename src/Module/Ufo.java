@@ -22,7 +22,7 @@ public class Ufo extends BaseObject {
     public void move() {
         x += Math.random() * 2 - 1;
         y += Math.random() * 2 - 1;
-        checkBorders(radius, Space.game.getWidth() - radius + 1, radius, (double) Space.game.getHeight()/2 - 1);
+        checkBorders(radius, game.getWidth() - radius + 1, radius, game.getHeight()/2 - 1);
 
         if ((int) (Math.random() * 10) == 0) {
             fire();
@@ -31,6 +31,6 @@ public class Ufo extends BaseObject {
 
     public void fire() {
         Bomb bomb = new Bomb(x, y + 3);
-        Space.game.getBombs().add(bomb);
+        game.getBombs().add(bomb);
     }
 }
