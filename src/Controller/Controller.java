@@ -21,9 +21,9 @@ public class Controller {
      *  Boolean block to prevent pressing keys too fast.
      */
     private boolean keyActive;
-    private SpaceShip ship;
+    private final SpaceShip ship;
     private static Space game;
-    private MainView view;
+    private final MainView view;
 
     public Controller() {
         state = GameState.Started;
@@ -101,52 +101,45 @@ public class Controller {
      */
     private void movement(Scene scene) {
 
-        scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
+        scene.setOnKeyPressed(e -> {
 
-            public void	handle(KeyEvent e){
-
-                switch (e.getCode()) {
-                    case UP -> {
-                        if (keyActive && state == GameState.Running) {
-                            up = true;
-                            left = false;
-                            right = false;
-                            keyActive = false;
-                        }
+            switch (e.getCode()) {
+                case UP -> {
+                    if (keyActive && state == GameState.Running) {
+                        up = true;
+                        left = false;
+                        right = false;
+                        keyActive = false;
                     }
-                    case LEFT -> {
-                        if (!right && keyActive && state == GameState.Running) {
-                            left = true;
-                            up = false;
-                            keyActive = false;
-                        }
+                }
+                case LEFT -> {
+                    if (!right && keyActive && state == GameState.Running) {
+                        left = true;
+                        up = false;
+                        keyActive = false;
                     }
-                    case RIGHT -> {
-                        if (!left && keyActive && state == GameState.Running) {
-                            right = true;
-                            up = false;
-                            keyActive = false;
-                        }
+                }
+                case RIGHT -> {
+                    if (!left && keyActive && state == GameState.Running) {
+                        right = true;
+                        up = false;
+                        keyActive = false;
                     }
-                    case ENTER -> { // start or restart the game
-                        start = true;
-                        if (state == GameState.Finished) {
-                            resume();
-                        }
+                }
+                case ENTER -> { // start or restart the game
+                    start = true;
+                    if (state == GameState.Finished) {
+                        resume();
                     }
-                    case ESCAPE -> // exit program
-                            System.exit(0);
-                    default -> {
-                    }
+                }
+                case ESCAPE -> // exit program
+                        System.exit(0);
+                default -> {
                 }
             }
         });
 
-        scene.setOnKeyReleased(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent event) {
-            }
-        });
+        scene.setOnKeyReleased(event -> {});
     }
 
     /**

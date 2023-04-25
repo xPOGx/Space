@@ -5,7 +5,6 @@ import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
@@ -34,15 +33,15 @@ public class MainView {
     /**
      * Space object
      */
-    private Space game;
+    private final Space game;
     /**
      * Object to hold the actual scene
      */
-    private Scene scene;
+    private final Scene scene;
     /**
      * The stage
      */
-    private Stage stage;
+    private final Stage stage;
     /**
      * Actual state of the game
      */
@@ -50,7 +49,7 @@ public class MainView {
     /**
      * Ship object
      */
-    private SpaceShip ship;
+    private final SpaceShip ship;
     /**
      * Ufos list
      */
@@ -64,8 +63,8 @@ public class MainView {
      */
     private List<Rocket> rockets;
     private Group g;
-    private Pane canvas;
-    private GridPane grid;
+    private final Pane canvas;
+    private final GridPane grid;
 
     /**
      * Default constructor initializes the basic variables and objects
@@ -113,9 +112,9 @@ public class MainView {
     private void whenStarted() {
 
         g = new Group();
-        Text largeText = new Text(WIDTH/2 - 170, HEIGHT/2 - 30, "Space Game");
+        Text largeText = new Text((double) WIDTH /2 - 170, (double) HEIGHT /2 - 30, "Space Game");
         largeText.setFont(Font.font("verdana", FontWeight.EXTRA_BOLD, FontPosture.REGULAR, 50));
-        Text smallText = new Text(WIDTH/2 - 130, HEIGHT/2 + 20 , "Press ENTER to play");
+        Text smallText = new Text((double) WIDTH /2 - 130, (double) HEIGHT /2 + 20 , "Press ENTER to play");
         smallText.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.ITALIC, 25));
         smallText.setFill(Color.DARKGREEN);
         g.getChildren().addAll(smallText, largeText);
@@ -142,7 +141,7 @@ public class MainView {
             for (int i = 0; i < game.getRockets().size(); i++) {
                 helpX = game.getRockets().get(i).getX();
                 helpY = game.getRockets().get(i).getY();
-                c = new Circle(helpX, helpY, BaseObject.SIZE / 3);
+                c = new Circle(helpX, helpY, (double) BaseObject.SIZE / 3);
                 c.setFill(Paint.valueOf("yellow"));
                 canvas.getChildren().add(c);
             }
@@ -163,7 +162,7 @@ public class MainView {
             for (int i = 0; i < game.getBombs().size(); i++) {
                 helpX = game.getBombs().get(i).getX();
                 helpY = game.getBombs().get(i).getY();
-                c = new Circle(helpX, helpY, BaseObject.SIZE / 3);
+                c = new Circle(helpX, helpY, (double) BaseObject.SIZE / 3);
                 c.setFill(Paint.valueOf("green"));
                 canvas.getChildren().add(c);
             }

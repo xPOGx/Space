@@ -1,7 +1,6 @@
 package Module;
 
 import Controller.Controller;
-import View.MainView;
 
 public abstract class BaseObject {
     public static final Space game = Controller.getGame();
