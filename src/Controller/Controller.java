@@ -3,9 +3,7 @@ package Controller;
 import Module.*;
 import View.MainView;
 import javafx.animation.AnimationTimer;
-import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
 public class Controller {
