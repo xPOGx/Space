@@ -1,3 +1,5 @@
+package Module;
+
 public class Bomb extends BaseObject {
 
     public Bomb(double x, double y) {

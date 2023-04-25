@@ -1,3 +1,5 @@
+package Module;
+
 public class Canvas {
     private final int width;
     private final int height;

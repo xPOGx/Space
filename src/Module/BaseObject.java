@@ -1,3 +1,5 @@
+package Module;
+
 public abstract class BaseObject {
     protected double x;
     protected double y;

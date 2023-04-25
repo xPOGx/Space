@@ -1,2 +1,2 @@
-# Space
-Space game on Java
+# Module.Space
+Module.Space game on Java

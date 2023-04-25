@@ -1,3 +1,5 @@
+package Module;
+
 import java.util.Arrays;
 
 public class SpaceShip extends BaseObject {

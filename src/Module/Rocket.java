@@ -1,3 +1,5 @@
+package Module;
+
 public class Rocket extends BaseObject {
 
     public Rocket(double x, double y) {

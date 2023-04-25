@@ -1,3 +1,5 @@
+package Module;
+
 public class Ufo extends BaseObject {
     private static final int[][] matrix = {
             {0, 0, 1, 0, 0},
